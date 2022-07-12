@@ -29,14 +29,14 @@ playbutton.addEventListener("click", playit);
 function playit() {
     if (audiocomp.paused || audiocomp.currentTime <= 0) {
         audiocomp.play();
-        playbutton.classList.remove('fa-play');
-        playbutton.classList.add('fa-pause');
+        playbutton.classList.remove('uil-play-circle');
+        playbutton.classList.add('uil-pause-circle');
         gif.style.opacity = 1;
     }
     else {
         audiocomp.pause();
-        playbutton.classList.remove('fa-pause');
-        playbutton.classList.add('fa-play');
+        playbutton.classList.remove('uil-pause-circle');
+        playbutton.classList.add('uil-play-circle');
         gif.style.opacity = 0;
 
     }
@@ -54,8 +54,8 @@ progressbar.addEventListener('change', () => {
 })
 const makeAllPlays = () => {
     Array.from(document.getElementsByClassName('songitemplay')).forEach((element) => {
-        element.classList.remove('fa-pause');
-        element.classList.add('fa-play');
+        element.classList.remove('uil-pause-circle');
+        element.classList.add('uil-play-circle');
     })
 }
 
@@ -63,15 +63,15 @@ Array.from(document.getElementsByClassName('songitemplay')).forEach((element) =>
     element.addEventListener('click', (e) => {
         makeAllPlays();
         songindex = parseInt(e.target.id);
-        e.target.classList.remove('fa-play');
-        e.target.classList.add('fa-pause');
+        e.target.classList.remove('uil-play-circle');
+        e.target.classList.add('uil-pause-circle');
         audiocomp.src = `music/${songindex + 1}.mp3`;
         masterSongName.innerText = music[songindex].songname;
         audiocomp.currentTime = 0;
         audiocomp.play();
         gif.style.opacity = 1;
-        playbutton.classList.remove('fa-play');
-        playbutton.classList.add('fa-pause');
+        playbutton.classList.remove('uil-play-circle');
+        playbutton.classList.add('uil-pause-circle');
     })
 })
 
@@ -86,8 +86,8 @@ document.getElementById('next').addEventListener('click', () => {
     masterSongName.innerText = music[songindex].songname;
     audiocomp.currentTime = 0;
     audiocomp.play();
-    playbutton.classList.remove('fa-play');
-    playbutton.classList.add('fa-pause');
+    playbutton.classList.remove('uil-play-circle');
+    playbutton.classList.add('uil-pause-circle');
 
 })
 
@@ -102,6 +102,6 @@ document.getElementById('previous').addEventListener('click', () => {
     masterSongName.innerText = music[songindex].songname;
     audiocomp.currentTime = 0;
     audiocomp.play();
-    playbutton.classList.remove('fa-play');
-    playbutton.classList.add('fa-pause');
+    playbutton.classList.remove('uil-play-circle');
+    playbutton.classList.add('uil-pause-circle');
 })
