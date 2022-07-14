@@ -88,7 +88,7 @@
 .songsname {
   position: absolute;
   left: 10vw;
-  
+  margin-top:20px;
 }
 
 .songname img{
